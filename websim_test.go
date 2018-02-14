@@ -2,11 +2,12 @@ package main
 
 import (
 	"encoding/json"
-	"websim/handlers"
-	"github.com/gin-gonic/gin"
 	"net/http"
 	"net/http/httptest"
 	"testing"
+
+	"github.com/gin-gonic/gin"
+	"github.com/shokunin/websim/handlers"
 )
 
 func TestHealthCheck(t *testing.T) {

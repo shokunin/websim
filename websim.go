@@ -1,11 +1,12 @@
 package main
 
 import (
-	"websim/handlers"
+	"time"
+
 	"github.com/gin-gonic/gin"
 	"github.com/shokunin/contrib/ginrus"
+	websim "github.com/shokunin/websim/handlers"
 	"github.com/sirupsen/logrus"
-	"time"
 )
 
 func main() {
