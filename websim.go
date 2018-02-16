@@ -18,7 +18,7 @@ func main() {
 	router.GET("/health", websim.HealthCheck)
 	router.GET("/timer/:bucketstart/:bucketend", websim.Timer)
 	router.GET("/timersize/:bucketstart/:bucketend/:mb", websim.TimerSize)
-
+	router.GET("/timersizebytes/:bucketstart/:bucketend/:bytes", websim.TimerSizeBytes)
 	// RUN rabit run
 	router.Run() // listen and serve on 0.0.0.0:8080
 }
