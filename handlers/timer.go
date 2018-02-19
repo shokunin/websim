@@ -51,6 +51,26 @@ func TimerSize(c *gin.Context) {
 	})
 }
 
+func TimerSizeBytes(c *gin.Context) {
+	s, _ := strconv.Atoi(c.Param("bucketstart"))
+	e, _ := strconv.Atoi(c.Param("bucketend"))
+	bytes, _ := strconv.Atoi(c.Param("bytes"))
+	var mydata []byte
+	for i := 0; i < (bytes); i++ {
+		mydata = append(mydata, 0)
+	}
+	randsleep := s + rand.Intn(e-s)
+	time.Sleep(time.Duration(randsleep) * time.Millisecond)
+	c.JSON(200, gin.H{
+		"message":      "OK",
+		"bucketstart":  c.Param("bucketstart"),
+		"bucketend":    c.Param("bucketend"),
+		"randsleep_ms": randsleep,
+		"size_bytes":   len(mydata),
+		"data":         mydata,
+	})
+}
+
 func HealthCheck(c *gin.Context) {
 	c.JSON(200, gin.H{
 		"message": "OK",
