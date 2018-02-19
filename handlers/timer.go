@@ -9,9 +9,14 @@ import (
 )
 
 func Timer(c *gin.Context) {
+	var randsleep int
 	s, _ := strconv.Atoi(c.Param("bucketstart"))
 	e, _ := strconv.Atoi(c.Param("bucketend"))
-	randsleep := s + rand.Intn(e-s)
+	if e > s {
+		randsleep = s + rand.Intn(e-s)
+	} else {
+		randsleep = s
+	}
 	time.Sleep(time.Duration(randsleep) * time.Millisecond)
 	c.JSON(200, gin.H{
 		"message":      "OK",
@@ -22,6 +27,7 @@ func Timer(c *gin.Context) {
 }
 
 func TimerSize(c *gin.Context) {
+	var randsleep int
 	s, _ := strconv.Atoi(c.Param("bucketstart"))
 	e, _ := strconv.Atoi(c.Param("bucketend"))
 	m, _ := strconv.Atoi(c.Param("mb"))
@@ -29,7 +35,11 @@ func TimerSize(c *gin.Context) {
 	for i := 0; i < (m * 1000000); i++ {
 		mydata = append(mydata, 0)
 	}
-	randsleep := s + rand.Intn(e-s)
+	if e > s {
+		randsleep = s + rand.Intn(e-s)
+	} else {
+		randsleep = s
+	}
 	time.Sleep(time.Duration(randsleep) * time.Millisecond)
 	c.JSON(200, gin.H{
 		"message":      "OK",
