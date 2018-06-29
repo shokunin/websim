@@ -1,5 +1,7 @@
 # websim
 
+## Usage
+
 A lightweight web simulator to test various scenarios
 
 | Method | Path | Usage |
@@ -9,9 +11,6 @@ A lightweight web simulator to test various scenarios
 | GET |  /timer/:bucketstart/:bucketend | Return a 200 after sleeping a random number of seconds between start and end |
 | GET |  /timersize/:bucketstart/:bucketend/:mb | Similar to timer, but also add X mb of random data |
 | GET |  /timersizebytes/:bucketstart/:bucketend/:bytes | Similar to timer, but also add X bytes of random data |
-
-
-## Using
 
 
 ## Building
