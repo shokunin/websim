@@ -1,6 +1,18 @@
 # websim
 
-Simulate web traffic 
+A lightweight web simulator to test various scenarios
+
+| Method | Path | Usage |
+| --- | --- | --- |
+| GET |   /health  | Simply return a 200 |
+| GET |  /status/:status | Return a response the the HTTP status code submitted |
+| GET |  /timer/:bucketstart/:bucketend | Return a 200 after sleeping a random number of seconds between start and end |
+| GET |  /timersize/:bucketstart/:bucketend/:mb | Similar to timer, but also add X mb of random data |
+| GET |  /timersizebytes/:bucketstart/:bucketend/:bytes | Similar to timer, but also add X bytes of random data |
+
+
+## Using
+
 
 ## Building
 
