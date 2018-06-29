@@ -16,6 +16,7 @@ func main() {
 
 	// Start routes
 	router.GET("/health", websim.HealthCheck)
+	router.GET("/status/:status", websim.SetStatus)
 	router.GET("/timer/:bucketstart/:bucketend", websim.Timer)
 	router.GET("/timersize/:bucketstart/:bucketend/:mb", websim.TimerSize)
 	router.GET("/timersizebytes/:bucketstart/:bucketend/:bytes", websim.TimerSizeBytes)
